@@ -45,6 +45,16 @@ Key Points:
 Syntax:
     continue;
 
+________________________________________________________
+🔎 BREAK vs CONTINUE
+
+| Feature        | break                  | continue                 |
+|---------------|------------------------|--------------------------|
+| Purpose       | Exit loop completely   | Skip current iteration   |
+| Loop ends?    | Yes                    | No                       |
+| Control moves | Outside loop           | Next iteration           |
+
+
 ------------------------------------------------------------
 GOTO STATEMENT
 ------------------------------------------------------------
