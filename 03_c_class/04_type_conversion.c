@@ -1,3 +1,197 @@
+/*
+====================================================================
+                TYPE CONVERSION & TYPE MODIFIERS IN C
+        Complete Theory + Definitions + Examples (Single File)
+====================================================================
+
+📌 TYPE CONVERSION
+Type conversion is the process of converting one data type
+into another data type.
+
+In C, there are TWO types of type conversion:
+
+1️⃣ Implicit Conversion (Automatic)
+2️⃣ Explicit Conversion (Manual / Type Casting)
+
+====================================================================
+1️⃣ IMPLICIT TYPE CONVERSION
+====================================================================
+
+Definition:
+In implicit conversion, the compiler automatically converts
+one data type into another without programmer intervention.
+
+It generally occurs:
+- When different data types are used in an expression
+- When assigning one type to another
+
+Example:
+int a = 10;
+float b = a;   // int automatically converted to float
+
+Key Point:
+- Smaller data types are converted to larger data types
+- No data loss when converting lower → higher type
+
+====================================================================
+2️⃣ EXPLICIT TYPE CONVERSION (TYPE CASTING)
+====================================================================
+
+Definition:
+Explicit conversion is a user-defined conversion where
+the programmer manually converts one data type into another
+using casting operator.
+
+Syntax:
+    (type) expression
+
+Example:
+float result = (float)10 / 3;
+
+Key Point:
+- Used when we want controlled conversion
+- May cause data loss if higher → lower type
+
+====================================================================
+TYPE MODIFIERS
+====================================================================
+
+Type modifiers are used to modify the size and range
+of basic data types.
+
+Types of Modifiers:
+1️⃣ short
+2️⃣ long
+3️⃣ signed
+4️⃣ unsigned
+
+--------------------------------------------------------------------
+🔹 short
+- Reduces memory size
+- Typically 2 bytes
+- Range: -32768 to 32767
+
+🔹 long
+- Increases memory size
+- Used for large integer values
+
+🔹 signed
+- Stores both positive and negative values
+- Default for int and char
+
+🔹 unsigned
+- Stores only positive values
+- Increases positive range
+
+====================================================================
+SIZE OF DATA TYPES (Typical)
+====================================================================
+char        → 1 byte
+int         → 4 bytes
+float       → 4 bytes
+double      → 8 bytes
+long int    → 8 bytes (system dependent)
+short int   → 2 bytes
+
+====================================================================
+                PROGRAM
+====================================================================
+*/
+
+
+//IMPLICIT CONVERSION--->>>
+
+
+#include <stdio.h>
+
+int main()
+{
+    printf("========== IMPLICIT CONVERSION ==========\n");
+
+    int intValue = 10;
+    float floatValue = intValue;   // automatic conversion
+
+    printf("Integer Value: %d\n", intValue);
+    printf("Converted to Float: %.2f\n", floatValue);
+
+
+    printf("\n========== IMPLICIT (CHAR TO INT) ==========\n");
+
+    char alphabet = 'A';
+    int asciiValue = alphabet;   // char to int conversion
+
+    printf("Character: %c\n", alphabet);
+    printf("ASCII Value: %d\n", asciiValue);
+
+
+
+
+    //EXPLICIT CONVERSION----->>>
+
+
+
+    printf("\n========== EXPLICIT CONVERSION ==========\n");
+
+    int a = 10, b = 3;
+
+    float divisionResult = (float)a / b;   // manual casting
+
+    printf("Without Casting (10/3): %d\n", a/b);
+    printf("With Casting (10/3): %.2f\n", divisionResult);
+
+
+
+
+
+    //TYPE MODIFIERS----->>>>
+
+
+    printf("\n========== TYPE MODIFIERS ==========\n");
+
+    short shortNum = 100;
+    long longNum = 1000000;
+    signed int signedNum = -50;
+    unsigned int unsignedNum = 50;
+
+    printf("Short Value: %d\n", shortNum);
+    printf("Long Value: %ld\n", longNum);
+    printf("Signed Value: %d\n", signedNum);
+    printf("Unsigned Value: %u\n", unsignedNum);
+
+
+
+
+
+
+    //SIZE OF DATA TYPES----->>>>
+
+
+    printf("\n========== SIZE OF DATA TYPES ==========\n");
+
+    printf("Size of char: %lu bytes\n", sizeof(char));
+    printf("Size of int: %lu bytes\n", sizeof(int));
+    printf("Size of float: %lu bytes\n", sizeof(float));
+    printf("Size of double: %lu bytes\n", sizeof(double));
+    printf("Size of short: %lu bytes\n", sizeof(short));
+    printf("Size of long: %lu bytes\n", sizeof(long));
+
+    printf("\nProgram Executed Successfully.\n");
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+//Hotspot and classspot---->>>
+
+
+
 //Type conversion 
 #include <stdio.h>
 
