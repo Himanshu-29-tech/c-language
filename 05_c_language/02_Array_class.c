@@ -95,6 +95,50 @@ int main()
     return 0;
 }
 
+/*disadvantage of linear->>
+
+Slow for large data
+It checks each element one by one
+If array is big → takes more time
+
+
+💁Binary search -->>
+
+
+Binary Search is a method to find an element by repeatedly dividing the array into halves.
+
+⚠️ Condition: Array must be sorted
+
+
+🧠 Idea (Very Simple)----->>
+
+Instead of checking one by one:
+
+Go to middle element
+Compare with target
+Decide:
+Left side ❓
+Right side ❓
+
+
+⚙️ Algorithm
+Set:
+low = 0
+high = n - 1
+Repeat until low <= high
+
+Find middle:
+
+mid = (low + high) / 2
+Compare:
+If a[mid] == data → found
+If data < a[mid] → search left → high = mid - 1
+If data > a[mid] → search right → low = mid + 1
+
+*/
+
+
+
 
 
 
