@@ -139,6 +139,93 @@ If data > a[mid] → search right → low = mid + 1
 
 
 
+#include <stdio.h>
+
+int main()
+{
+    int a[10], n, i, data;
+    int low, high, mid;
+
+    printf("How many elements: ");
+    scanf("%d", &n);
+
+    printf("Enter %d sorted elements:\n", n);
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    printf("Enter element to search: ");
+    scanf("%d", &data);
+
+    low = 0;
+    high = n - 1;
+
+    while(low <= high)
+    {
+        mid = (low + high) / 2;
+
+        if(a[mid] == data)
+        {
+            printf("Element found at index %d\n", mid);
+            break;
+        }
+        else if(data < a[mid])
+        {
+            high = mid - 1;
+        }
+        else
+        {
+            low = mid + 1;
+        }
+    }
+
+    if(low > high)
+    {
+        printf("Element not found\n");
+    }
+
+    return 0;
+}
+
+
+/*
+#Bubble sort-->>
+
+Bubble Sort is a sorting technique where adjacent elements are compared and swapped if they are in the wrong order.
+
+👉 Biggest element “bubbles up” to the end in each pass.
+
+
+🧠 Idea (Simple)
+Compare 1st & 2nd
+Then 2nd & 3rd
+Keep swapping if needed
+After 1 round → largest element goes to last
+
+
+Array: [5, 3, 2, 4]
+
+Pass 1:
+5 > 3 → swap → [3, 5, 2, 4]
+5 > 2 → swap → [3, 2, 5, 4]
+5 > 4 → swap → [3, 2, 4, 5]
+
+👉 Largest (5) fixed at end
+
+Pass 2:
+3 > 2 → swap → [2, 3, 4, 5]
+3 < 4 → no swap
+Pass 3:
+Already sorted 
+
+
+pass = (n-1)   where n=size of array
+
+*/
+
+
+
 
 
 
