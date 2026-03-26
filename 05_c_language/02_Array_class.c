@@ -59,6 +59,44 @@ int main()
 
 
 
+//example-->>>
+#include <stdio.h>
+
+int main()
+{
+    int a[10], i, n, data;
+
+    printf("How many elements: ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    printf("Enter element to search: ");
+    scanf("%d", &data);
+
+    for(i = 0; i < n; i++)
+    {
+        if(a[i] == data)
+        {
+            printf("Data is present at index %d\n", i);
+            break;
+        }
+    }
+
+    if(i == n)
+    {
+        printf("Data is not present\n");
+    }
+
+    return 0;
+}
+
+
+
 
 
 
