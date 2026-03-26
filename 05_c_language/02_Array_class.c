@@ -43,3 +43,22 @@ int main()
 
 
 
+
+// linear search and binary search
+
+// #linear search-->>
+
+// Linear search checks each element one by one until the target is found or the list ends.
+
+// 🧠 How it works
+// Start from index 0
+// Compare each element with target
+// If match → return index
+// If not → move to next
+
+
+
+
+
+
+
