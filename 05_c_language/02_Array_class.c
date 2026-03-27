@@ -249,8 +249,43 @@ main()
 }
 
 
+/* deletion 
+🗑️ What is Deletion?
+
+👉 Deletion means removing an element from an array.
+
+⚠️ Since arrays are fixed size, we shift elements left after deletion.
+
+🧠 Idea
+Find the position of element
+Shift elements left
+Reduce size (n--)
+📊 Example
+
+Array: [10, 20, 30, 40, 50]
+Delete element at position 2 (value = 30) 
+
+*/
 
 
 
-
-
+#include<stdio.h>
+main()
+{
+    int a[10],i,n,data,index;
+    printf("how many elements");
+    scanf("%d",&n);
+    printf("enter %d elements",n);
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+        printf("enter index at which u want to delete");
+        scanf("%d",&index);
+        for(i=index;i<n-1;i++)
+            a[i] =a[i+1];
+           
+        n++;
+        printf("after deletion ");
+        for(i=0;i<n;i++)
+            printf("%d ",a[i]);
+        
+}
