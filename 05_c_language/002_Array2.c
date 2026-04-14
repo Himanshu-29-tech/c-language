@@ -67,6 +67,26 @@ int main()
 }
 
 /*
+main()
+   ↓
+num[] (array created)
+   ↓
+calculateSum(num)
+   ↓
+num[] → same array (address passed)
+   ↓
+loop runs → sum calculated
+   ↓
+return sum → main()
+   ↓
+result stores value
+   ↓
+printf()
+*/
+
+
+
+/*
    NOTE:
    - Only array name is passed → calculateSum(num)
    - In function: float num[] OR float *num
