@@ -148,10 +148,20 @@ int main()
     printf("Enter element to insert at beginning: ");
     scanf("%d", &element);
 
-    // Shift elements right
+    // Shift elements right  --->> Move all elements one position right
     for(i = n; i > 0; i--)
         arr[i] = arr[i - 1];
 
+
+   /* 🧠 Why backward loop?
+
+👉 If we go forward:
+
+Data will be overwritten ❌
+
+👉 So we go:
+Right → Left (safe shifting)
+/*
     arr[0] = element;
     n++;
 
