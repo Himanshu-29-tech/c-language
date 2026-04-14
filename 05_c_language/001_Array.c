@@ -3,14 +3,7 @@
 📘 C PROGRAM: MATH FUNCTIONS + ARRAYS (ALL-IN-ONE)
 ===========================================================
 
-This file combines:
-✔ Definitions (Theory)
-✔ Syntax
-✔ Examples
-✔ Programs
 
-Everything is explained INSIDE the code itself.
-===========================================================
 */
 
 #include <stdio.h>
