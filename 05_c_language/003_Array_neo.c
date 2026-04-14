@@ -375,3 +375,125 @@ STEP 3 → Handle edge cases
 
 ===========================================================
 */
+
+/*
+===========================================================
+📌 QUESTION: Sort Employee IDs (Even First, Then Odd)
+===========================================================
+
+🧠 WHAT IS ASKED?
+- Given N employee IDs
+- Sort using Bubble Sort
+- Condition:
+   ✔ Even numbers first
+   ✔ Odd numbers later
+- Order inside groups is NOT strictly specified
+
+-----------------------------------------------------------
+✅ APPROACH:
+
+We modify Bubble Sort condition:
+
+👉 Normally:
+   if (arr[j] > arr[j+1]) → swap
+
+👉 Here:
+   1. If arr[j] is odd and arr[j+1] is even → swap
+   2. If both even OR both odd → sort normally
+
+-----------------------------------------------------------
+*/
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int arr[n];
+
+    // Step 1: Input employee IDs
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Step 2: Bubble Sort with custom condition
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+
+            // Case 1: Odd comes before Even → swap
+            if ((arr[j] % 2 != 0) && (arr[j + 1] % 2 == 0)) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+
+            // Case 2: Both even OR both odd → sort ascending
+            else if ((arr[j] % 2 == arr[j + 1] % 2) && (arr[j] > arr[j + 1])) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    // Step 3: Print result
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+
+/*
+===========================================================
+📝 LINE-BY-LINE EXPLANATION
+===========================================================
+
+arr[j] % 2 → checks:
+   0 → even
+   1 → odd
+
+Condition 1:
+(arr[j] is odd AND arr[j+1] is even)
+→ wrong order → swap
+
+Condition 2:
+Both same type (even-even or odd-odd)
+→ sort normally
+
+===========================================================
+📝 QUICK NOTES (VERY IMPORTANT)
+===========================================================
+
+✔ Even check → %2 == 0
+✔ Odd check → %2 != 0
+
+✔ Custom sorting = modify condition
+
+✔ Bubble sort pattern:
+   for i
+     for j
+       compare + swap
+
+===========================================================
+🎯 EXAM STRATEGY
+===========================================================
+
+STEP 1 → Identify sorting type
+STEP 2 → Modify condition
+STEP 3 → Handle grouping logic
+
+👉 Pattern:
+✔ Grouping + Sorting
+
+===========================================================
+🚀 FINAL TIP:
+This is a VERY COMMON question:
+"Even first, Odd later"
+
+Just remember:
+👉 Swap when (odd, even)
+
+===========================================================
+*/
