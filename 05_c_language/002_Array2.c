@@ -256,6 +256,34 @@ int main()
 
     return 0;
 }
+/*
+Input n
+↓
+Input array
+↓
+Input position
+↓
+Input value
+↓
+Shift elements right
+↓
+Insert at pos-1
+↓
+Increase size
+↓
+Print array */
+
+
+// 🚀 FINAL MEMORY TRICK
+
+// 👉 3 rules:
+
+// Beginning → Shift + index 0
+// End → Direct insert
+// Position → Shift + pos-1
+
+
+
 
 /* ---------------------------------------------------------
    6. IMPORTANT CONCEPTS (INTERVIEW READY)
