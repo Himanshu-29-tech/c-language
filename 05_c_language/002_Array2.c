@@ -206,7 +206,23 @@ int main()
 
     return 0;
 }
-
+/*
+Start
+ ↓
+Input size (n)
+ ↓
+Input elements (arr[])
+ ↓
+Input new value
+ ↓
+Insert at arr[n]
+ ↓
+Increase size (n++)
+ ↓
+Print array
+ ↓
+End
+*/
 /* ---- (C) INSERT AT SPECIFIC POSITION ---- */
 #include<stdio.h>
 
