@@ -161,7 +161,7 @@ Data will be overwritten ❌
 
 👉 So we go:
 Right → Left (safe shifting)
-/*
+*/
     arr[0] = element;
     n++;
 
@@ -171,6 +171,14 @@ Right → Left (safe shifting)
 
     return 0;
 }
+
+
+/* Final Logic 
+1. Take input
+2. Shift elements right
+3. Insert at index 0
+4. Increase size
+5. Print array */
 
 /* ---- (B) INSERT AT END ---- */
 #include<stdio.h>
