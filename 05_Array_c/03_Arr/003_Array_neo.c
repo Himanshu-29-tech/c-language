@@ -2,7 +2,7 @@
 ===========================================================
 📌 QUESTION 1: Find Maximum in Rotated Sorted Array
 ===========================================================
-
+ think like a dictionary you have to find "raj" you goes on the middle split the dictionary and move in one side ignoring other side 
 🧠 PROBLEM:
 Array was sorted in ascending order but rotated.
 Find the maximum element using Binary Search.
