@@ -291,12 +291,12 @@ Compare adjacent elements and swap
 
 void bubbleSort()
 {
-    int arr[] = {5, 1, 4, 2, 8};
-    int n = 5;
+    int arr[] = {5, 1, 4, 2, 8}; // array declaration
+    int n = 5; // size of array
 
-    for(int i = 0; i < n-1; i++)
+    for(int i = 0; i < n-1; i++) // each loop run less than size of array (n-1)
     {
-        for(int j = 0; j < n-i-1; j++)
+        for(int j = 0; j < n-i-1; j++) // j will run less than (n-1) i.e (n-2)
         {
             if(arr[j] > arr[j+1])
             {
