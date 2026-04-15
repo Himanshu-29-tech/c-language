@@ -60,3 +60,21 @@ int main()
 
     return 0;
 }
+
+/*
+Start
+  ↓
+Input r1, c1
+  ↓
+Input r2, c2
+  ↓
+Check (r1 == r2 && c1 == c2)?
+   ↓ YES                ↓ NO
+Input Matrix A        Print "Not possible"
+Input Matrix B             ↓
+   ↓                      End
+Add Matrices
+   ↓
+Print Result
+   ↓
+End */
