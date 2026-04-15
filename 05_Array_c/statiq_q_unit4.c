@@ -13,33 +13,45 @@
 3. Count occurrences
 -----------------------------------------------------------
 */
+#include <stdio.h>
 
-// Count digit in a single number
-int countDigitOccurrences(int number, int digit) {
+// Function to count occurrences of digit in array
+int countDigitOccurrences(int arr[], int n, int digit) {
     int count = 0;
 
-    while (number != 0) {
-        int remainder = number % 10;   // Extract last digit
+    for (int i = 0; i < n; i++) {
+        int num = arr[i];
 
-        if (remainder == digit) {
-            count++;
+        while (num != 0) {
+            int rem = num % 10;
+
+            if (rem == digit) {
+                count++;
+            }
+
+            num = num / 10;
         }
-
-        number /= 10; // Remove last digit
     }
 
     return count;
 }
 
-// Count digit in entire array
-int countOccurrencesInArray(int arr[], int size, int digit) {
-    int count = 0;
+int main() {
+    int n, digit;
+    scanf("%d", &n);
 
-    for (int i = 0; i < size; i++) {
-        count += countDigitOccurrences(arr[i], digit);
+    int arr[n];
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
     }
 
-    return count;
+    scanf("%d", &digit);
+
+    int result = countDigitOccurrences(arr, n, digit);
+    printf("%d", result);
+
+    return 0;
 }
 
 /*
