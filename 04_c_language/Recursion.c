@@ -168,21 +168,90 @@ Rules:
 
 ------------------------------------------------------*/
 
-void towerOfHanoi(int n, char source, char auxiliary, char destination)
+#include <stdio.h>
+
+void towerOfHanoi(int n, char S, char A, char D)
 {
+    // Base case
     if(n == 1)
     {
-        printf("Move disk 1 from %c -> %c\n", source, destination);
+        printf("Move disk 1 from %c -> %c\n", S, D);
         return;
     }
 
-    towerOfHanoi(n-1, source, destination, auxiliary);
+    // Step 1: Move n-1 disks from Source to Auxiliary
+    towerOfHanoi(n-1, S, D, A);
 
-    printf("Move disk %d from %c -> %c\n", n, source, destination);
+    // Step 2: Move nth (largest) disk
+    printf("Move disk %d from %c -> %c\n", n, S, D);
 
-    towerOfHanoi(n-1, auxiliary, source, destination);
+    // Step 3: Move n-1 disks from Auxiliary to Destination
+    towerOfHanoi(n-1, A, S, D);
 }
 
+int main()
+{
+    int n = 3;
+    towerOfHanoi(n, 'A', 'B', 'C'); // A = Source, B = Auxiliary, C = Destination
+    return 0;
+}
+
+
+/*
+
+}
+🔥 Super Easy Explanation
+
+Think like this:
+
+👉 Function Meaning:
+towerOfHanoi(n, S, A, D)
+S = Source
+A = Helper (Auxiliary)
+D = Destination
+👉 What happens?
+
+For n disks:
+
+Move n-1 disks → S → A
+Move big disk → S → D
+Move n-1 disks → A → D
+🎯 Example (n = 3)
+
+Steps will be:
+
+Move disk 1 from A -> C
+Move disk 2 from A -> B
+Move disk 1 from C -> B
+Move disk 3 from A -> C
+Move disk 1 from B -> A
+Move disk 2 from B -> C
+Move disk 1 from A -> C
+⚡ Quick Memory Trick
+
+👉 Just remember this pattern:
+
+(n-1) → left
+1 disk → center
+(n-1) → right
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
 /*------------------------------------------------------
 MAIN FUNCTION
 ------------------------------------------------------*/
