@@ -122,3 +122,53 @@ int main()
 
     return 0;
 }
+
+
+/*
+===========================================================
+📌 QUESTION: Factorial Calculation (For Loop)
+===========================================================
+
+🧠 WHAT IS ASKED?
+- Input a number n
+- Calculate factorial (n!)
+- Use for loop
+
+-----------------------------------------------------------
+✅ APPROACH:
+1. Input n
+2. Initialize fact = 1
+3. Loop from 1 to n
+4. Multiply fact = fact * i
+5. Print result
+
+-----------------------------------------------------------
+🔑 KEY POINTS:
+- Factorial = product of numbers from 1 to n
+- Use for loop for controlled iteration
+- Start fact from 1 (not 0)
+
+-----------------------------------------------------------
+🔄 FLOW:
+INPUT → INITIALIZE → LOOP → MULTIPLY → OUTPUT
+-----------------------------------------------------------
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    int fact = 1;
+
+    for(int i = 1; i <= n; i++)
+    {
+        fact *= i;
+    }
+
+    printf("%d", fact);
+
+    return 0;
+}
