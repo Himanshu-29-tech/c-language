@@ -457,3 +457,329 @@ int main()
 
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+//          NEXT                      //
+/*
+===========================================================
+📌 QUESTION: Common Factors of Two Numbers
+===========================================================
+
+🧠 WHAT IS ASKED?
+- Input two numbers n1 and n2
+- Print all common factors
+
+-----------------------------------------------------------
+✅ APPROACH:
+1. Input n1 and n2
+2. Loop from 1 to min(n1, n2)
+3. If number divides both → print
+
+-----------------------------------------------------------
+🔑 KEY POINTS:
+- Common factor → divides both numbers
+- Use % operator
+- Loop till smaller number
+
+-----------------------------------------------------------
+🔄 FLOW:
+INPUT → LOOP → CHECK → PRINT → OUTPUT
+-----------------------------------------------------------
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    unsigned int n1, n2;
+    scanf("%u %u", &n1, &n2);
+
+    int limit = (n1 < n2) ? n1 : n2;
+
+    for(int i = 1; i <= limit; i++)
+    {
+        if(n1 % i == 0 && n2 % i == 0)
+        {
+            printf("%d ", i);
+        }
+    }
+
+    return 0;
+}/*
+===========================================================
+📌 QUESTION: Kilometer to Miles Converter
+===========================================================
+
+🧠 WHAT IS ASKED?
+- Input distance in kilometers
+- Convert into miles
+- Print result with 2 decimal places
+
+-----------------------------------------------------------
+✅ FORMULA:
+Miles = Kilometers × 0.621371
+
+-----------------------------------------------------------
+✅ APPROACH:
+1. Input integer n (kilometers)
+2. Multiply with 0.621371
+3. Print result using %.2lf
+
+-----------------------------------------------------------
+🔑 KEY POINTS:
+- Use double for accurate result
+- Format output to 2 decimal places
+- Conversion constant is fixed
+
+-----------------------------------------------------------
+🔄 FLOW:
+INPUT → MULTIPLY → OUTPUT
+-----------------------------------------------------------
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    double miles = n * 0.621371;
+
+    printf("%.2lf", miles);
+
+    return 0;
+}/*
+===========================================================
+📌 QUESTION: Currency Conversion
+===========================================================
+
+🧠 WHAT IS ASKED?
+- Input an amount
+- Convert using fixed rate (1.18)
+- Print result with 2 decimal places
+
+-----------------------------------------------------------
+✅ FORMULA:
+Converted Amount = n × 1.18
+
+-----------------------------------------------------------
+✅ APPROACH:
+1. Input double value n
+2. Multiply by 1.18
+3. Print using %.2lf
+
+-----------------------------------------------------------
+🔑 KEY POINTS:
+- Use double for precision
+- Fixed exchange rate
+- Format output properly
+
+-----------------------------------------------------------
+🔄 FLOW:
+INPUT → MULTIPLY → OUTPUT
+-----------------------------------------------------------
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    double n;
+    scanf("%lf", &n);
+
+    double result = n * 1.18;
+
+    printf("%.2lf", result);
+
+    return 0;
+}/*
+===========================================================
+📌 QUESTION: Compare int and long
+===========================================================
+
+🧠 WHAT IS ASKED?
+- Input:
+   n → int
+   l → long
+- Convert int → long
+- Compare both values
+- Print result
+
+-----------------------------------------------------------
+✅ APPROACH:
+1. Input n and l
+2. Convert n → long (type casting)
+3. Compare:
+   - If equal → print equal
+   - If n < l → print less
+   - Else → print greater
+
+-----------------------------------------------------------
+🔑 KEY POINTS:
+- Type casting: (long)n
+- Use %ld for long
+- Compare same datatype to avoid issues
+
+-----------------------------------------------------------
+🔄 FLOW:
+INPUT → CONVERT → COMPARE → OUTPUT
+-----------------------------------------------------------
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    long l;
+
+    scanf("%d", &n);
+    scanf("%ld", &l);
+
+    long n_long = (long)n;   // type conversion
+
+    if(n_long == l)
+        printf("%d and %ld are equal.", n, l);
+    else if(n_long < l)
+        printf("%d is less than %ld.", n, l);
+    else
+        printf("%d is greater than %ld.", n, l);
+
+    return 0;
+}/*
+===========================================================
+📌 QUESTION: Float Multiplication + Integer Operations
+===========================================================
+
+🧠 WHAT IS ASKED?
+- Input two float numbers
+- Multiply them
+- Convert result to integer
+- Perform operation based on choice:
+   1 → +5
+   2 → -5
+   3 → /2
+- Print:
+   ✔ Float result (2 decimal)
+   ✔ Modified integer
+
+-----------------------------------------------------------
+✅ APPROACH:
+1. Input num1, num2
+2. Multiply → store in float result
+3. Convert to int → intResult = (int)result
+4. Apply operation using switch
+5. Print both outputs
+
+-----------------------------------------------------------
+🔑 KEY POINTS:
+- Type casting: (int)result
+- Use %.2lf for float output
+- Use switch for clean choice handling
+
+-----------------------------------------------------------
+🔄 FLOW:
+INPUT → MULTIPLY → CONVERT → APPLY OPERATION → OUTPUT
+-----------------------------------------------------------
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    double num1, num2;
+    int choice;
+
+    scanf("%lf %lf", &num1, &num2);
+    scanf("%d", &choice);
+
+    double result = num1 * num2;
+
+    int intResult = (int)result;
+
+    switch(choice)
+    {
+        case 1:
+            intResult += 5;
+            break;
+
+        case 2:
+            intResult -= 5;
+            break;
+
+        case 3:
+            intResult /= 2;
+            break;
+    }
+
+    printf("Multiplication Result (as float): %.2lf\n", result);
+    printf("Converted Integer: %d", intResult);
+
+    return 0;
+}/*
+===========================================================
+📌 QUESTION: Integer to Binary & Hexadecimal (Simple)
+===========================================================
+
+🧠 WHAT IS ASKED?
+- Input integer n
+- Print:
+   ✔ Binary (no leading zeros)
+   ✔ Hexadecimal
+
+-----------------------------------------------------------
+✅ APPROACH:
+1. Input n
+2. Use bit shifting for binary
+3. Start printing only after first 1 appears
+4. Use %X for hexadecimal
+
+-----------------------------------------------------------
+🔑 KEY POINTS:
+- (n >> i) & 1 → extracts bit
+- Avoid leading zeros using flag
+- %X → uppercase hex
+
+-----------------------------------------------------------
+🔄 FLOW:
+INPUT → EXTRACT BITS → PRINT BINARY → PRINT HEX
+-----------------------------------------------------------
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    printf("Binary: ");
+
+    int started = 0;
+
+    for(int i = 31; i >= 0; i--)
+    {
+        int bit = (n >> i) & 1;
+
+        if(bit == 1)
+            started = 1;
+
+        if(started)
+            printf("%d", bit);
+    }
+
+    printf("\n");
+    printf("Hexadecimal: %X", n);
+
+    return 0;
+}
