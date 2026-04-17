@@ -172,3 +172,65 @@ int main()
 
     return 0;
 }
+
+/*
+===========================================================
+📌 QUESTION: Employee Growth Series
+===========================================================
+
+🧠 WHAT IS ASKED?
+- Given a series:
+  20, 60, 104, 152, 204, ...
+- Print first N terms using for loop
+
+-----------------------------------------------------------
+✅ PATTERN OBSERVATION:
+Differences:
+60 - 20 = 40
+104 - 60 = 44
+152 - 104 = 48
+204 - 152 = 52
+
+👉 Difference increases by +4 each time
+
+-----------------------------------------------------------
+✅ APPROACH:
+1. First term = 20
+2. Initial difference = 40
+3. Loop N times:
+   - Print current term
+   - Add difference to term
+   - Increase difference by 4
+
+-----------------------------------------------------------
+🔑 KEY POINTS:
+- Pattern-based series
+- Difference increases by constant value (4)
+- Use for loop
+
+-----------------------------------------------------------
+🔄 FLOW:
+INPUT → INITIALIZE → LOOP → PRINT → UPDATE → OUTPUT
+-----------------------------------------------------------
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int N;
+    scanf("%d", &N);
+
+    int term = 20;
+    int diff = 40;
+
+    for(int i = 1; i <= N; i++)
+    {
+        printf("%d ", term);
+
+        term += diff;
+        diff += 4;
+    }
+
+    return 0;
+}
