@@ -234,3 +234,64 @@ int main()
 
     return 0;
 }
+
+
+
+
+
+
+
+//                   next                                //
+/*
+===========================================================
+📌 QUESTION: Even or Odd using GOTO
+===========================================================
+
+🧠 WHAT IS ASKED?
+- Input an integer n
+- Use goto to check:
+   - Even → print "n is an even number."
+   - Odd  → print "n is an odd number."
+
+-----------------------------------------------------------
+✅ APPROACH:
+1. Input number n
+2. Check condition:
+   - If n % 2 == 0 → goto EVEN
+   - Else → goto ODD
+3. Use labels to print result
+
+-----------------------------------------------------------
+🔑 KEY POINTS:
+- goto jumps to labeled statement
+- Use labels like EVEN: and ODD:
+- Avoid unnecessary goto in real programs (used here for learning)
+
+-----------------------------------------------------------
+🔄 FLOW:
+INPUT → CHECK EVEN/ODD → GOTO LABEL → OUTPUT
+-----------------------------------------------------------
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    if(n % 2 == 0)
+        goto EVEN;
+    else
+        goto ODD;
+
+EVEN:
+    printf("%d is an even number.", n);
+    goto END;
+
+ODD:
+    printf("%d is an odd number.", n);
+
+END:
+    return 0;
+}
