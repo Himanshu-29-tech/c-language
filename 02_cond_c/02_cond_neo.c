@@ -33,7 +33,6 @@
 INPUT → SET LIMIT → COMPARE → OUTPUT
 -----------------------------------------------------------
 */
-
 #include <stdio.h>
 
 int main()
@@ -44,21 +43,82 @@ int main()
     scanf("%d", &choice);
     scanf("%d", &speed);
 
-    // Assign speed limit
-    if(choice == 1)
-        limit = 25;
-    else if(choice == 2)
-        limit = 35;
-    else
-        limit = 55;
+    // Set limit using switch
+    switch(choice)
+    {
+        case 1:
+            limit = 25;
+            break;
 
-    // Compare and print result
+        case 2:
+            limit = 35;
+            break;
+
+        case 3:
+            limit = 55;
+            break;
+    }
+
+    // Compare speed
     if(speed < limit)
         printf("Below");
     else if(speed == limit)
         printf("Normal");
     else
         printf("Above");
+
+    return 0;
+
+
+
+/*
+===========================================================
+📌 QUESTION: Sum of First N Numbers (While Loop)
+===========================================================
+
+🧠 WHAT IS ASKED?
+- Input a number N
+- Find sum of numbers from 1 to N
+- Use while loop
+
+-----------------------------------------------------------
+✅ APPROACH:
+1. Input N
+2. Initialize:
+   i = 1, sum = 0
+3. Run while loop till i ≤ N
+4. Add i to sum
+5. Increment i
+6. Print sum
+
+-----------------------------------------------------------
+🔑 KEY POINTS:
+- while loop used for repetition
+- sum accumulates values
+- loop runs N times
+
+-----------------------------------------------------------
+🔄 FLOW:
+INPUT → INITIALIZE → LOOP → ADD → OUTPUT
+-----------------------------------------------------------
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int N;
+    scanf("%d", &N);
+
+    int i = 1, sum = 0;
+
+    while(i <= N)
+    {
+        sum += i;
+        i++;
+    }
+
+    printf("%d", sum);
 
     return 0;
 }
