@@ -294,4 +294,166 @@ ODD:
 
 END:
     return 0;
+}/*
+===========================================================
+📌 QUESTION: Festival Event Management (Using continue)
+===========================================================
+
+🧠 WHAT IS ASKED?
+- Loop from day 1 to n
+- Conditions:
+   1. If day divisible by BOTH 3 and 5 → skip (continue)
+   2. If divisible by 4 → "Critical Issue"
+   3. If divisible by 7 → "Routine Maintenance"
+   4. Else → "Safe Event"
+
+-----------------------------------------------------------
+✅ APPROACH:
+1. Input n
+2. Loop from 1 to n
+3. Check:
+   - If (i % 3 == 0 && i % 5 == 0) → continue
+   - Else if (i % 4 == 0) → print "Critical Issue"
+   - Else if (i % 7 == 0) → print "Routine Maintenance"
+   - Else → print "Safe Event"
+
+-----------------------------------------------------------
+🔑 KEY POINTS:
+- continue skips current iteration
+- Order of conditions is important
+- Check skip condition FIRST
+
+-----------------------------------------------------------
+🔄 FLOW:
+INPUT → LOOP → CHECK SKIP → APPLY CONDITIONS → OUTPUT
+-----------------------------------------------------------
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    for(int i = 1; i <= n; i++)
+    {
+        if(i % 3 == 0 && i % 5 == 0)
+            continue;
+
+        if(i % 4 == 0)
+            printf("Critical Issue\n");
+        else if(i % 7 == 0)
+            printf("Routine Maintenance\n");
+        else
+            printf("Safe Event\n");
+    }
+
+    return 0;
+}/*
+===========================================================
+📌 QUESTION: Odd Temperatures (Skip Multiples of 3)
+===========================================================
+
+🧠 WHAT IS ASKED?
+- Input range m to n
+- Print numbers that are:
+   ✔ Odd
+   ✔ NOT divisible by 3
+- Use continue to skip unwanted values
+
+-----------------------------------------------------------
+✅ APPROACH:
+1. Input m and n
+2. Loop from m to n
+3. If number is divisible by 3 → continue (skip)
+4. Check if number is odd → print
+5. Print values separated by space
+
+-----------------------------------------------------------
+🔑 KEY POINTS:
+- Odd → n % 2 != 0
+- Skip multiples of 3 first
+- Use continue to skip iteration
+
+-----------------------------------------------------------
+🔄 FLOW:
+INPUT → LOOP → CHECK (MULTIPLE OF 3) → SKIP →
+CHECK ODD → PRINT → OUTPUT
+-----------------------------------------------------------
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int m, n;
+    scanf("%d", &m);
+    scanf("%d", &n);
+
+    for(int i = m; i <= n; i++)
+    {
+        if(i % 3 == 0)
+            continue;
+
+        if(i % 2 != 0)
+            printf("%d ", i);
+    }
+
+    return 0;
+}/*
+===========================================================
+📌 QUESTION: Number Type Identification (Using return)
+===========================================================
+
+🧠 WHAT IS ASKED?
+- Input an integer N
+- Identify:
+   ✔ Positive
+   ✔ Negative
+   ✔ Zero
+- Use return statement after printing
+
+-----------------------------------------------------------
+✅ APPROACH:
+1. Input N
+2. Check conditions:
+   - If N > 0 → print positive → return
+   - If N < 0 → print negative → return
+   - Else → print zero
+
+-----------------------------------------------------------
+🔑 KEY POINTS:
+- return exits the program immediately
+- Each condition ends with return
+- Avoid unnecessary checks after return
+
+-----------------------------------------------------------
+🔄 FLOW:
+INPUT → CHECK → PRINT → RETURN
+-----------------------------------------------------------
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int N;
+    scanf("%d", &N);
+
+    if(N > 0)
+    {
+        printf("The number %d is positive.", N);
+        return 0;
+    }
+
+    if(N < 0)
+    {
+        printf("The number %d is negative.", N);
+        return 0;
+    }
+
+    printf("The number %d is zero.", N);
+
+    return 0;
 }
