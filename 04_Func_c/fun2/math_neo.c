@@ -1,4 +1,4 @@
-📘 Clear Problem Statements + Solutions (Beginner Friendly)
+/*📘 Clear Problem Statements + Solutions (Beginner Friendly)
 🔷 1. Hexagonal Garden (Area & Perimeter)
 📌 Detailed Problem
 You are given a hexagonal garden, which means a shape with 6 equal sides.
@@ -10,7 +10,7 @@ The perimeter of the hexagon
 Print both values rounded to 2 decimal places
 🧠 What is being asked?
 👉 “Given one side, find total boundary and total space inside.”
-💻 Code
+💻 Code*/
 #include <stdio.h>
 #include <math.h>
 
@@ -26,7 +26,7 @@ int main() {
 
     return 0;
 }
-🔷 2. Quadrilateral Area
+/*🔷 2. Quadrilateral Area
 📌 Detailed Problem
 You are given a quadrilateral (a shape with 4 sides).
 You need to:
@@ -35,7 +35,7 @@ Calculate the area using a formula
 Print the result up to 2 decimal places
 🧠 What is being asked?
 👉 “Given 4 sides, find the area using a special formula.”
-💻 Code
+💻 Code*/
 #include <stdio.h>
 #include <math.h>
 
@@ -50,7 +50,7 @@ int main() {
 
     return 0;
 }
-🔷 3. Recursive Countdown
+/*🔷 3. Recursive Countdown
 📌 Detailed Problem
 You are given a number n (like 5 or 10).
 You need to:
@@ -60,7 +60,7 @@ Format output like:
 5-4-3-2-1
 🧠 What is being asked?
 👉 “Print numbers backwards using recursion.”
-💻 Code
+💻 Code*/
 #include <stdio.h>
 
 void countdown(int n) {
@@ -81,7 +81,7 @@ int main() {
     countdown(n);
     return 0;
 }
-🔷 4. Odd Number of Factors
+/*🔷 4. Odd Number of Factors
 📌 Detailed Problem
 You are given two numbers n and m representing a range.
 You need to:
@@ -92,7 +92,7 @@ Print only the count
 👉 “How many numbers in this range have odd number of divisors?”
 💡 Important Insight
 👉 Only perfect squares have odd number of factors
-💻 Code
+💻 Code*/
 #include <stdio.h>
 #include <math.h>
 
@@ -112,7 +112,7 @@ int main() {
 
     return 0;
 }
-🔷 5. Taylor Series (e^x)
+/*🔷 5. Taylor Series (e^x)
 📌 Detailed Problem
 You are given:
 A number x
@@ -124,7 +124,7 @@ Add terms like:
 Print result rounded to 2 decimal places
 🧠 What is being asked?
 👉 “Approximate e^x using series expansion.”
-💻 Code
+💻 Code*/
 #include <stdio.h>
 #include <math.h>
 
@@ -148,7 +148,7 @@ int main() {
     printf("%.2lf\n", sum);
 
     return 0;
-}
+}/*
 🚀 FINAL UNDERSTANDING (SUPER IMPORTANT)
 🔑 What each question is testing
 Question	Concept
@@ -156,4 +156,4 @@ Hexagon	Formula + math functions
 Quadrilateral	Advanced formula (sqrt)
 Countdown	Recursion
 Odd factors	Mathematical pattern
-Taylor series	Loop + math logic
+Taylor series	Loop + math logic*/
