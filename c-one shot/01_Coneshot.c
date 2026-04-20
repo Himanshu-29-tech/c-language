@@ -34,7 +34,8 @@ int main()
 
     printf("%d\n",x/y);
 
-
+int z = x + y;
+printf("%d",z);
 
 
 
