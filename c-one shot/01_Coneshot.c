@@ -37,7 +37,21 @@ int main()
 int z = x + y;
 printf("%d",z);
 
+// %d --->> for integer
+// %f --->> for float
+    float x = 3.14;
+    printf("%f",x);
 
+/* 5 / 2 --->> integer ->> 2
+    float z = 5/2; 
+     ---->> float z = 2;
+
+    5.0/2 --->> 2.5 ---->>when you devide float to integer ---->> it gives float value
+    5/2.0 --->> 2.5
+
+
+
+        */
 
 
 
