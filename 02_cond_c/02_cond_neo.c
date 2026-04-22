@@ -123,6 +123,45 @@ int main()
     return 0;
 }
 
+#include <stdio.h>
+
+/*
+ * Program: Compare an integer and a long integer
+ * Description:
+ *  - Takes an int (n) and a long (l) as input
+ *  - Converts int to long
+ *  - Compares both values and prints the result
+ */
+
+int main(void) {
+    int n;
+    long l;
+
+    // Input values
+    scanf("%d", &n);
+    scanf("%ld", &l);
+
+    // Convert int to long for safe comparison
+    long n_long = (long)n;
+
+    // Compare and print result
+    if (n_long == l) {
+        printf("%d and %ld are equal.", n, l);
+    } 
+    else if (n_long < l) {
+        printf("%d is less than %ld.", n, l);
+    } 
+    else {
+        printf("%d is greater than %ld.", n, l);
+    }
+
+    return 0;
+}
+
+
+
+
+
 
 /*
 ===========================================================
