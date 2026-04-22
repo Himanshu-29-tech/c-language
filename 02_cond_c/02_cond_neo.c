@@ -235,6 +235,41 @@ int main()
     return 0;
 }
 
+#include <stdio.h>
+
+
+
+/*
+    Program: Sum of Squares of Digits
+    Description:
+    Takes an integer input and calculates the sum of the squares of its digits
+    using a do-while loop.
+
+    Example:
+    Input: 55
+    Output: 50  (5^2 + 5^2 = 25 + 25 = 50)
+*/
+
+
+
+int main() {
+    int n, digit, sum = 0;
+
+    // Input
+    scanf("%d", &n);
+
+    // Process using do-while loop
+    do {
+        digit = n % 10;          // Extract last digit
+        sum += digit * digit;    // Add square of digit
+        n = n / 10;              // Remove last digit
+    } while (n != 0);
+
+    // Output
+    printf("%d", sum);
+
+    return 0;
+}
 
 
 
