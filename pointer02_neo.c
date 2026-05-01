@@ -188,7 +188,180 @@ int main() {
     printf("Sum of divisors: %d", total);
 
     free(arr);
-}/*
+}
+#include <stdio.h>
+#include <stdlib.h>
+
+/*
+==========================================================
+QUESTION 1: Combine Two Arrays using malloc & realloc
+==========================================================
+
+PROBLEM:
+- Given two arrays of size N
+- Resize first array to 2N using realloc
+- Append second array into first array
+- Print combined array
+
+----------------------------------------------------------
+APPROACH:
+1. Allocate arr1 and arr2 using malloc
+2. Input both arrays
+3. Use realloc to expand arr1 to size 2N
+4. Copy arr2 elements into arr1
+5. Print 2N elements
+
+----------------------------------------------------------
+KEY POINT:
+- arr1[n + i] = arr2[i]
+
+==========================================================
+*/
+
+void combineArrays() {
+    int n, i;
+
+    scanf("%d", &n);
+
+    int *arr1 = (int *)malloc(n * sizeof(int));
+    int *arr2 = (int *)malloc(n * sizeof(int));
+
+    for(i = 0; i < n; i++)
+        scanf("%d", &arr1[i]);
+
+    for(i = 0; i < n; i++)
+        scanf("%d", &arr2[i]);
+
+    // Resize arr1
+    arr1 = (int *)realloc(arr1, 2 * n * sizeof(int));
+
+    // Append arr2
+    for(i = 0; i < n; i++)
+        arr1[n + i] = arr2[i];
+
+    // Print result
+    for(i = 0; i < 2 * n; i++) {
+        printf("%d", arr1[i]);
+        if(i != 2*n - 1) printf(" ");
+    }
+
+    printf("\n");
+
+    free(arr1);
+    free(arr2);
+}
+
+
+/*
+==========================================================
+QUESTION 2: Delete Elements using malloc & realloc
+==========================================================
+
+PROBLEM:
+- Remove elements from arr1 that are present in arr2
+- Resize arr1 after deletion
+- Print updated array
+
+----------------------------------------------------------
+APPROACH:
+1. Input arr1 and arr2
+2. For each element in arr1:
+   - Check if it exists in arr2
+3. If NOT found → keep it
+4. Use overwrite method
+5. Resize using realloc
+6. Print new array
+
+----------------------------------------------------------
+KEY POINT:
+- arr1[newSize++] = arr1[i]
+
+==========================================================
+*/
+
+void deleteElements() {
+    int N, M, i, j, found;
+
+    scanf("%d", &N);
+    int *arr1 = (int *)malloc(N * sizeof(int));
+
+    for(i = 0; i < N; i++)
+        scanf("%d", &arr1[i]);
+
+    scanf("%d", &M);
+    int *arr2 = (int *)malloc(M * sizeof(int));
+
+    for(i = 0; i < M; i++)
+        scanf("%d", &arr2[i]);
+
+    int newSize = 0;
+
+    for(i = 0; i < N; i++) {
+        found = 0;
+
+        for(j = 0; j < M; j++) {
+            if(arr1[i] == arr2[j]) {
+                found = 1;
+                break;
+            }
+        }
+
+        if(!found) {
+            arr1[newSize++] = arr1[i];
+        }
+    }
+
+    // Resize array
+    arr1 = (int *)realloc(arr1, newSize * sizeof(int));
+
+    // Print result
+    for(i = 0; i < newSize; i++) {
+        printf("%d", arr1[i]);
+        if(i != newSize - 1) printf(" ");
+    }
+
+    printf("\n");
+
+    free(arr1);
+    free(arr2);
+}
+
+
+/*
+==========================================================
+MAIN FUNCTION (FOR TESTING BOTH)
+==========================================================
+*/
+
+int main() {
+    // Call any one function based on question
+
+    // combineArrays();
+    deleteElements();
+
+    return 0;
+}
+
+
+/*
+==========================================================
+QUICK RECAP
+==========================================================
+
+✔ malloc → allocate memory
+✔ realloc → resize memory
+✔ free → release memory
+
+✔ Q1 → Expand + Append
+✔ Q2 → Filter + Shrink
+
+✔ Always:
+- Print correct size
+- Avoid extra spaces
+- Assign realloc back to pointer
+
+==========================================================
+*//*
 MEMORY:
 - malloc → uninitialized
 - calloc → initialized to 0
